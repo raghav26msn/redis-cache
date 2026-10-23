@@ -1,0 +1,9 @@
+//this will create network
+docker network create app-network
+
+//this will create redis
+docker run -d `
+  --name redis `
+  --network app-network `
+  -p 6379:6379 `
+  redis:7-alpine
